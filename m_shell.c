@@ -29,6 +29,9 @@ while (1)
 	if (!cmd)
 		continue;
 
-	status = execute_cmd(cmd, av, idx);
+	if (check_builtin(cmd[0]))
+	builtinhandle(cmd, av, &status, idx);
+	else
+		status = execute_cmd(cmd, av, idx);
 }
 }

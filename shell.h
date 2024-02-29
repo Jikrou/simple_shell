@@ -29,5 +29,9 @@ char *_getenv(char *var);
 char *path_handle(char *cmd);
 void cleanup_mem(char **str);
 void printmsg_error(char *name, char *comand, int indx);
+void print_env(char **cmd, int *status);
+void exit_(char **cmd, int *status);
+void builtinhandle(char **cmd, char **av, int *status, int idx);
+int check_builtin(char *cmd);
 #endif
 
