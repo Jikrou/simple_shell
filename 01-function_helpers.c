@@ -56,7 +56,7 @@ char *_getenv(char *var)
 */
 void printmsg_error(char *name, char *comand, int indx)
 {
-	char *ix, msg[] = ":not found\n";
+	char *ix, msg[] = ": not found\n";
 
 	ix = _itao(indx);
 
