@@ -10,7 +10,7 @@ int shell_mode(int ac, char **av)
 {
 char *input = NULL;
 char **cmd = NULL;
-int status = 0;
+int status = 0, idx = 0;
 (void)ac;
 
 while (1)
@@ -23,10 +23,12 @@ while (1)
 		write(STDOUT_FILENO, "\n", 1);
 	return (status);
 	}
+	idx++;
+
 	cmd = tokenize_input(input);
 	if (!cmd)
 		continue;
 
-	status = execute_cmd(cmd, av);
+	status = execute_cmd(cmd, av, idx);
 }
 }

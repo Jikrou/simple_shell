@@ -39,7 +39,7 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	strcpy(p, str);
+	_strcpy(p, str);
 	return (p);
 }
 
@@ -64,23 +64,47 @@ char *_strcpy(char *dest, char *src)
 	*dest = '\0';
 	return (i);
 }
+
 /**
- * cleanup_mem - this function fress the memory allocated for an arra
- * of strings.
- * @str: an array of strings to be freed.
- * Return: None
+ * _strcmp - a function that compares two strings
+ * @s1: pointer
+ * @s2: pointer
+ * Return: integer (Success)
 */
-void cleanup_mem(char **str)
+int _strcmp(char *s1, char *s2)
 {
-	int i;
+	int i = 0;
 
-	if (!str)
-		return;
-
-	for (i = 0; str[i]; i++)
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
-		free(str[i]);
-		str[i] = NULL;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+				i++;
 	}
-	free(str);
+	return (0);
+
+}
+
+/**
+ * _strcat - a function that concatenates two strings
+ * @dest: pointer
+ * @src: pointer
+ * Return: a pointer to dest
+*/
+char *_strcat(char *dest, char *src)
+{
+	char *i = dest;
+
+	while (*i != '\0')
+	{
+		i++;
+	}
+	while (*src != '\0')
+	{
+		*i = *src;
+		i++;
+		src++;
+	}
+	*i = '\0';
+	return (dest);
 }
