@@ -8,7 +8,7 @@ The simple shell program provides a command-line interface where users can inter
 
 ## Features
 
-- Execute basic commands such as `ls`, `mkdir`, `rm`, `cp`, `echo`, `printenv`, and `env`.
+- Execute basic commands such as `ls`, `mkdir`, `rm`, `cp`, `echo`, `printenv`, `exit`, and `env`.
 - Perform file system operations like listing directory contents, creating and removing directories, copying files, and printing text.
 - Display environmental variables and their values.
 
